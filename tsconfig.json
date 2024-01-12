@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "noEmit": true,
+    "maxNodeModuleJsDepth": 5,
+    "baseUrl": "./src"
+  },
+  "include": ["src"]
+}
