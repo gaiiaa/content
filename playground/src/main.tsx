@@ -1,10 +1,23 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import * as jsx from "react/jsx-runtime";
+import { toJSX } from "../../src";
 
-import markdown from '../content/hello.md'
+import markdown from "../content/hello.md";
+console.log(markdown);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <div>{JSON.stringify(markdown.meta)}</div>
-  </React.StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById("root")!).render(
+	<React.StrictMode>
+		{toJSX(
+			markdown,
+			{
+				jsx: jsx.jsx,
+				jsxs: jsx.jsxs,
+				Fragment: jsx.Fragment,
+			},
+      {
+        code: (props) => (console.log(props),<pre {...props} />),
+      }
+		)}
+	</React.StrictMode>
+);

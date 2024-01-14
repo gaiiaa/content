@@ -5,10 +5,12 @@ import rehypeSlug from "rehype-slug";
 import remarkParse from "remark-parse";
 import { visit } from "unist-util-visit";
 import remarkRehype from "remark-rehype";
+import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
 import remarkDirective from "remark-directive";
 import remarkFrontmatter from "remark-frontmatter";
 import { toJsxRuntime } from "hast-util-to-jsx-runtime";
+import remarkCodeFrontmatter from "remark-code-frontmatter";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 function customComponents() {
@@ -19,6 +21,7 @@ function customComponents() {
 				node.type === "leafDirective" ||
 				node.type === "textDirective"
 			) {
+				console.log(node);
 				const data = node.data || (node.data = {});
 				data.hName = "content-" + node.name;
 				data.hProperties = node.attributes;
@@ -35,6 +38,7 @@ export function createMdast(markdown, options = {}) {
 		marker: "-",
 		anywhere: true,
 	});
+	u.use(remarkCodeFrontmatter)
 	u.use(remarkDirective);
 	u.use(customComponents);
 	u.use(options.remarkPlugins || []);
@@ -43,8 +47,9 @@ export function createMdast(markdown, options = {}) {
 
 export async function createHast(mdast, options = {}) {
 	const u = unified();
-	u.use(remarkRehype, { allowDangerousHtml: options.allowDangerousHtml });
+	u.use(remarkRehype, { allowDangerousHtml: true });
 	u.use(rehypeRaw);
+	u.use(rehypeSanitize)
 	u.use(options.rehypePlugins || []);
 	u.use(rehypeSlug);
 	u.use(rehypeAutolinkHeadings);
@@ -57,6 +62,7 @@ export async function parse(markdown, options = {}) {
 		mdast.children.find((node) => node.type === "yaml").value ?? ""
 	);
 	const hast = await createHast(mdast, options);
+	console.log(hast.children[8]);
 	return {
 		meta,
 		ast: hast,

@@ -4,5 +4,5 @@ import content from "@gaiiaa/content"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), content()],
+  plugins: [react(), content({allowDangerousHtml: true})],
 })

@@ -11,10 +11,10 @@ export function parse(content: string, options?: {
 	remarkPlugins?: any[];
 	rehypePlugins?: any[];
 	allowDangerousHtml?: boolean;
-}): {
+}): Promise<{
 	meta: Record<string, unknown>;
 	ast: object;
-};
+}>
 export function stringify(ast: object, options?: {
 	allowDangerousHtml?: boolean;
 }): string;

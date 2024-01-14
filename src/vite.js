@@ -5,7 +5,9 @@ export function vitePluginFactory() {
 		name: "vite-plugin-content",
 		async transform(code, id) {
 			if (id.endsWith(".md")) {
-				return `export default ${JSON.stringify(await parse(code))};`;
+				return `export default ${JSON.stringify(
+					await parse(code)
+				)};`;
 			}
 			if (id.endsWith(".md?html")) {
 				return `export default ${JSON.stringify(
@@ -13,8 +15,10 @@ export function vitePluginFactory() {
 				)};`;
 			}
 			if (id.endsWith(".md?meta")) {
-				return `export default ${JSON.stringify((await parse(code)).meta)};`;
+				return `export default ${JSON.stringify(
+					(await parse(code)).meta
+				)};`;
 			}
-		}
+		},
 	};
 }
