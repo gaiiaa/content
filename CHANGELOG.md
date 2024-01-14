@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.1
+
+
+### 🩹 Fixes
+
+- Html (ef0ffee)
+- Ts (dd01176)
+
+### 🏡 Chore
+
+- Back to ts (aaa59c2)
+- Clear archi (5a415e3)
+
+### ❤️ Contributors
+
+- Benton Boychuk-Chorney <benten@Bentons-Air.gv.shawcable.net>
+
 ## v0.0.1
 
 
