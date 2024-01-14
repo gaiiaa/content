@@ -66,7 +66,6 @@ export async function parse(markdown: string, options: {
 		(mdast as any).children.find((node) => node.type === "yaml").value ?? ""
 	);
 	const hast = await createHast(mdast, options)
-	console.log(hast.children[8]);
 	return {
 		meta,
 		ast: hast,
