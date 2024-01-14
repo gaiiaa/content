@@ -1,8 +1,8 @@
 {
-  "name": "package-name",
-  "version": "0.0.0",
-  "description": "package-description",
-  "repository": "git-repo",
+  "name": "@gaiiaa/content",
+  "version": "0.1.0",
+  "description": "Content pipeline for Vite",
+  "repository": "@gaiiaa/content",
   "publishConfig": {
     "access": "public"
   },
@@ -34,19 +34,8 @@
     "vitest": "^0.34.6"
   },
   "packageManager": "pnpm@8.10.0",
-  "unbuild": {
-    "declaration": true,
-    "entries": [
-      {
-        "builder": "mkdist",
-        "format": "esm",
-        "input": "./src",
-        "ext": ".js",
-        "outDir": "./dist"
-      }
-    ]
-  },
   "dependencies": {
+    "@types/unist": "^3.0.2",
     "hast-util-to-jsx-runtime": "^2.3.0",
     "js-yaml": "^4.1.0",
     "rehype-autolink-headings": "^7.1.0",
@@ -60,8 +49,20 @@
     "remark-rehype": "^11.1.0",
     "unified": "^11.0.4",
     "unist-util-visit": "^5.0.0"
-  }, 
+  },
   "peerDependencies": {
     "vite": "^5.0.11"
+  },
+  "unbuild": {
+    "declaration": true,
+    "entries": [
+      {
+        "builder": "mkdist",
+        "format": "esm",
+        "input": "./src",
+        "ext": ".js",
+        "outDir": "./dist"
+      }
+    ]
   }
 }

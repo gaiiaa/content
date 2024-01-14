@@ -11,7 +11,6 @@ import remarkDirective from "remark-directive";
 import remarkFrontmatter from "remark-frontmatter";
 import { toJsxRuntime } from "hast-util-to-jsx-runtime";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { HastRoot, MdastRoot } from "remark-rehype/lib/index.js";
 
 function customComponents() {
 	return function (tree: any) {
@@ -55,7 +54,7 @@ export async function createHast(mdast, options: {
 	u.use(options.rehypePlugins || []);
 	u.use(rehypeSlug);
 	u.use(rehypeAutolinkHeadings);
-	return u.run(mdast) as unknown as HastRoot;
+	return u.run(mdast) as unknown as any;
 }
 
 export async function parse(markdown: string, options: {
@@ -99,7 +98,7 @@ export function toJSX(node: any, jsx: {
 		jsxs: jsx.jsxs,
 		Fragment: jsx.Fragment,
 		components,
-	});
+	}) as any;
 }
 
 export { vitePluginFactory as default } from "./vite.js";
