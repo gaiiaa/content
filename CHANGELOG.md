@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.4
+
+[compare changes](https://undefined/undefined/compare/v0.1.3...v0.1.4)
+
+### 🚀 Enhancements
+
+- Code frontmatter (5707dca)
+
+### ❤️ Contributors
+
+- Benton Boychuk-Chorney <benten@Bentons-Air.gv.shawcable.net>
+
 ## v0.1.3
 
 [compare changes](https://undefined/undefined/compare/v0.1.2...v0.1.3)
