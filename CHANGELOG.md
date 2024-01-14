@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://undefined/undefined/compare/v0.1.1...v0.1.2)
+
+### 🩹 Fixes
+
+- Console.log (c475c32)
+
+### ❤️ Contributors
+
+- Benton Boychuk-Chorney <benten@Bentons-Air.gv.shawcable.net>
+
 ## v0.1.1
 
 
