@@ -86,7 +86,8 @@ export async function parse(
 ) {
   const mdast = await createMdast(markdown, options);
   const meta = yaml.load(
-    (mdast as any).children.find((node) => node.type === "yaml").value ?? "",
+    (mdast as any)?.children?.find?.((node) => node.type === "yaml")?.value ??
+      "",
   );
   const hast = await createHast(mdast, options);
   return {
