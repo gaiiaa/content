@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.7
+
+[compare changes](https://undefined/undefined/compare/v0.1.6...v0.1.7)
+
+### 🩹 Fixes
+
+- Bundle issue (f148f67)
+
+### ❤️ Contributors
+
+- Benton <benton@droplab.com>
+
 ## v0.1.6
 
 [compare changes](https://undefined/undefined/compare/v0.1.5...v0.1.6)

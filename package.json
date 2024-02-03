@@ -1,6 +1,6 @@
 {
   "name": "@gaiiaa/content",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Content pipeline for Vite",
   "repository": "@gaiiaa/content",
   "publishConfig": {
